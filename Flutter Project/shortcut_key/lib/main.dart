@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      title: "Ms Word Shortcut App",
+      title: "MS Word Shortcut App",
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
