@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:school_management/ButtonDesign/animatedButton.dart';
 import 'package:school_management/appThemeColors.dart';
+import 'package:school_management/LoginScreens/parentsLogin.dart';
 
 class WalKThroughScreen extends StatefulWidget {
   @override
@@ -55,7 +57,7 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
         decoration: PageDecoration(
           titleTextStyle: PageDecoration().titleTextStyle.copyWith(
                 color: Colors.black,
-               fontFamily: "niuno",
+                fontFamily: "niuno",
               ),
           bodyTextStyle: PageDecoration().bodyTextStyle.copyWith(
                 color: Colors.black,
@@ -90,25 +92,38 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
             Icons.arrow_forward,
             size: 30.0,
           ),
-          done: Container(
-            height: MediaQuery.of(context).size.height * 0.06,
-            width: MediaQuery.of(context).size.width * 1.0,
-            decoration: BoxDecoration(
-                color: AppThemeColors.accentBlue,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0))),
-            child: Center(
-              child: Text(
-                "Done",
-                style: TextStyle(
-                  color: Colors.white,
+          done: AnimatedButton(
+            onTabDone: ()
+            {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return ParentsLogin();
+              }),
+            );
+            },
+            animationDuration: const Duration(milliseconds: 2000),
+            initialText: "Ok",
+            finalText: "Done",
+            iconData: Icons.done,
+            iconSize: 20.0,
+            buttonStyle: ButtonStyle(
+                primaryColor: AppThemeColors.accentBlue,
+                secondaryColor: Colors.white,
+                elevation: 20.0,
+                borderRadius: 10.0,
+                initialTextStyle: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height*0.020,
                   fontWeight: FontWeight.bold,
                   fontFamily: "niuno",
-                  fontSize: 22.0,
+                  color: Colors.white,
                 ),
-              ),
-            ),
+                finalTextStyle: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height*0.020,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "niuno",
+                  color: Colors.green.shade600,
+                )),
           ),
           dotsDecorator: DotsDecorator(
               size: const Size.square(10.0),
@@ -118,7 +133,9 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
               activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0))),
           pages: getPages(),
-          onDone: () {},
+          onDone: () {
+           return null;
+          },
         ),
       ),
     );
