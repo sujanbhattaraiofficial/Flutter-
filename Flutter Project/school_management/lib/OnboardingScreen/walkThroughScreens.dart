@@ -5,6 +5,10 @@ import 'package:school_management/appThemeColors.dart';
 import 'package:school_management/LoginScreens/parentsLogin.dart';
 
 class WalKThroughScreen extends StatefulWidget {
+  final PageController pageController;
+  final int currentPage;
+
+  const WalKThroughScreen({Key key, this.pageController, this.currentPage}) : super(key: key);
   @override
   _WalKThroughScreenState createState() => _WalKThroughScreenState();
 }
@@ -15,6 +19,7 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
       PageViewModel(
         image: Image.asset("assets/education.png"),
         title: "Education",
+        
         body:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         footer: Text(""),
@@ -129,7 +134,8 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
               size: const Size.square(10.0),
               activeSize: const Size(20.0, 10.0),
               color: Colors.black26,
-              spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+              activeColor: AppThemeColors.deepGreen,
+              spacing: const EdgeInsets.symmetric(horizontal: 5.0),
               activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0))),
           pages: getPages(),
