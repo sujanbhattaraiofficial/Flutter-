@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:school_management/ButtonDesign/animatedButton.dart';
 import 'package:school_management/appThemeColors.dart';
-import 'package:school_management/LoginScreens/parentsLogin.dart';
+import 'package:school_management/LoginScreens/loginBoard.dart';
 
 class WalKThroughScreen extends StatefulWidget {
   final PageController pageController;
   final int currentPage;
 
-  const WalKThroughScreen({Key key, this.pageController, this.currentPage}) : super(key: key);
+  const WalKThroughScreen({Key key, this.pageController, this.currentPage})
+      : super(key: key);
   @override
   _WalKThroughScreenState createState() => _WalKThroughScreenState();
 }
@@ -19,7 +20,6 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
       PageViewModel(
         image: Image.asset("assets/education.png"),
         title: "Education",
-        
         body:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         footer: Text(""),
@@ -98,14 +98,13 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
             size: 30.0,
           ),
           done: AnimatedButton(
-            onTabDone: ()
-            {
+            onTabDone: () {
               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return ParentsLogin();
-              }),
-            );
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return LoginBoard();
+                }),
+              );
             },
             animationDuration: const Duration(milliseconds: 2000),
             initialText: "Ok",
@@ -118,13 +117,13 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
                 elevation: 20.0,
                 borderRadius: 10.0,
                 initialTextStyle: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height*0.020,
+                  fontSize: MediaQuery.of(context).size.height * 0.020,
                   fontWeight: FontWeight.bold,
                   fontFamily: "niuno",
                   color: Colors.white,
                 ),
                 finalTextStyle: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height*0.020,
+                  fontSize: MediaQuery.of(context).size.height * 0.020,
                   fontWeight: FontWeight.bold,
                   fontFamily: "niuno",
                   color: Colors.green.shade600,
@@ -140,7 +139,7 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
                   borderRadius: BorderRadius.circular(25.0))),
           pages: getPages(),
           onDone: () {
-           return null;
+            return null;
           },
         ),
       ),

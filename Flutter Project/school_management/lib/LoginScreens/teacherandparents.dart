@@ -1,9 +1,4 @@
-List<String> images = [
-  "assets/parents.jpg",
-      "assets/teaching.jpg"
-];
-
-List<String> title = [
-  "I'm Parents",
-  "I'm Teacher"
+final List<Map> teacherandparents = [
+  {"images": "assets/parents.jpg", "text": "I'm a parents"},
+  {"images": "assets/teaching.jpg", "text": "I'm a teacher"}
 ];

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'appThemeColors.dart';
+import 'package:flutter/services.dart';
 import 'splashScreen.dart';
 
 void main() {
-  runApp(
-    MyApp(),
-  );
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue

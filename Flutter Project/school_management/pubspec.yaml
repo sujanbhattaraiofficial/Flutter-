@@ -24,6 +24,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   introduction_screen: ^1.0.7
+  flutter_screenutil: ^0.5.2
+  flutter_icons: ^1.0.0+1
+  font_awesome_flutter: ^8.5.0
 
 dev_dependencies:
   flutter_test:
@@ -69,9 +72,10 @@ flutter:
         - asset: fonts/Nunito-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: fonts/customIcons.ttf
+        
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
