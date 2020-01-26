@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:school_management/appThemeColors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'teacherandparents.dart';
 import 'parentsLoginScreen.dart';
 import 'teacherLoginScreen.dart';
@@ -12,9 +15,17 @@ class LoginBoard extends StatefulWidget {
 }
 
 class _LoginBoardState extends State<LoginBoard> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseUser user;
   double defaultScreenWidth = 411.0;
   double defaultScreenHeight = 683.0;
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    getUserinfo();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(
@@ -23,7 +34,6 @@ class _LoginBoardState extends State<LoginBoard> {
       allowFontScaling: true,
     )..init(context);
     return Scaffold(
-        key: _scaffoldKey,
         backgroundColor: AppThemeColors.accentGray,
         body: Container(
           child: Column(
@@ -69,6 +79,8 @@ class _LoginBoardState extends State<LoginBoard> {
                   Container(
                     height: ScreenUtil.getInstance().setHeight(400),
                     child: ListView.builder(
+                      shrinkWrap: true,
+                      controller: ScrollController(keepScrollOffset: false),
                       scrollDirection: Axis.horizontal,
                       itemCount: teacherandparents.length,
                       itemBuilder: (context, index) {
@@ -138,5 +150,20 @@ class _LoginBoardState extends State<LoginBoard> {
             ],
           ),
         ));
+  }
+
+  Future<String> getUserinfo() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final user = await _auth.currentUser();
+    String name = sharedPreferences.getString('name');
+    String currentToken = sharedPreferences.getString("facebook");
+    print(currentToken);
+    print(name);
+    if (name == user.displayName) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return TeacherLoginScreen(profileData: user);
+      }));
+    }
+    return currentToken;
   }
 }

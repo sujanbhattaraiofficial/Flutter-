@@ -1,7 +1,11 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:school_management/appThemeColors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import './OnboardingScreen/walkThroughScreens.dart';
+import 'LoginScreens/loginBoard.dart';
+import 'LoginScreens/teacherLoginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -9,14 +13,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  FirebaseAuth _auth;
   @override
   void initState() {
     super.initState();
-    Timer(
-        Duration(seconds: 5),
-        () => Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return WalKThroughScreen();
-            })));
+    Timer(Duration(seconds: 5), () => getSaveData());
   }
 
   @override
@@ -87,5 +88,23 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
     );
+  }
+
+  Future<bool> getSaveData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    bool isIntroScreenOpnedBefore =
+        sharedPreferences.getBool("isIntroScreenOpened") ?? false;
+    print(sharedPreferences.containsKey("isIntroScreenOpened"));
+
+    if (isIntroScreenOpnedBefore == true) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return LoginBoard();
+      }));
+    } else {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return WalKThroughScreen();
+      }));
+    }
+    return isIntroScreenOpnedBefore;
   }
 }

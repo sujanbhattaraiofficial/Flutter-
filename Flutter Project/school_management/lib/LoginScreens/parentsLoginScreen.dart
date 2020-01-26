@@ -1,6 +1,13 @@
+import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui/flutter_firebase_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school_management/LoginScreens/loginBoard.dart';
+import 'package:school_management/LoginScreens/teacherLoginScreen.dart';
 import 'package:school_management/appThemeColors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'SocialMediaIcons/mediaIcons.dart';
 import 'SocialMediaIcons/customIcons.dart';
 
@@ -10,8 +17,18 @@ class ParentsLoginScreen extends StatefulWidget {
 }
 
 class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
+  FacebookAccessToken facebookAccessToken;
+  FirebaseUser firebaseUser;
+  FirebaseAuth _auth = FirebaseAuth.instance;
   double defaultScreenWidth = 411.0;
   double defaultScreenHeight = 683.0;
+
+  @override
+  void initState() {
+    super.initState();
+    // getUserinfo();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(
@@ -157,12 +174,12 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
                           ),
                           GestureDetector(
                             onTap: _radio,
-                            child: Text("Remember me?",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: "niuno",
-                              fontSize: 15.0
-                            ),
+                            child: Text(
+                              "Remember me?",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "niuno",
+                                  fontSize: 15.0),
                             ),
                           ),
                         ],
@@ -260,6 +277,9 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
                           Color(0xFF00EAF8)
                         ],
                         iconData: CustomIcons.facebook,
+                        ifPressed: () {
+                          initiateFacebook();
+                        },
                       ),
                     ],
                   ),
@@ -332,5 +352,61 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
         color: AppThemeColors.accentGray,
       ),
     );
+  }
+
+  void initiateFacebook() async {
+    FacebookLogin facebookLogin = new FacebookLogin();
+    facebookLogin.loginBehavior = FacebookLoginBehavior.webOnly;
+    FacebookLoginResult facebookLoginResult =
+        await facebookLogin.logIn(['email']);
+    switch (facebookLoginResult.status) {
+      case FacebookLoginStatus.loggedIn:
+        facebookLoginSucessfully(facebookLoginResult);
+        saveCurrentUserInfo();
+        break;
+      case FacebookLoginStatus.cancelledByUser:
+        // TODO: Handle this case.
+        break;
+      case FacebookLoginStatus.error:
+        // TODO: Handle this case.
+        break;
+    }
+  }
+
+  // void onLoginStatusChange(FacebookLoginResult result) async { // it is the package provided by facebook itself
+  //   String fbUserInfoToken = result.accessToken.token;
+  //   var graphResponse = await http.get(
+  //       'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email,picture&access_token=$fbUserInfoToken');
+  //   var profile = json.decode(graphResponse.body);
+  //   await Navigator.push(context, MaterialPageRoute(builder: (context) {
+  //     return TeacherLoginScreen(profileData: profile);
+  //   }));
+  // }
+
+  Future<String> facebookLoginSucessfully(
+      FacebookLoginResult loginResult) async {
+    {
+      FacebookAccessToken facebookToken = loginResult.accessToken;
+      AuthCredential credential =
+          FacebookAuthProvider.getCredential(accessToken: facebookToken.token);
+      firebaseUser = (await _auth.signInWithCredential(credential)).user;
+
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return TeacherLoginScreen(
+          profileData: firebaseUser,
+          );
+      }));
+      return null;
+    }
+  }
+
+  Future<FirebaseUser> saveCurrentUserInfo() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final user = await _auth.currentUser();
+    String userName = user.displayName;
+    var token = user.getIdToken();
+    sharedPreferences.setString("name", userName);
+    sharedPreferences.setString("facebook", token.toString());
+    return user;
   }
 }

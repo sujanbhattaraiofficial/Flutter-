@@ -3,6 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:school_management/ButtonDesign/animatedButton.dart';
 import 'package:school_management/appThemeColors.dart';
 import 'package:school_management/LoginScreens/loginBoard.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WalKThroughScreen extends StatefulWidget {
   final PageController pageController;
@@ -10,11 +11,17 @@ class WalKThroughScreen extends StatefulWidget {
 
   const WalKThroughScreen({Key key, this.pageController, this.currentPage})
       : super(key: key);
+
   @override
   _WalKThroughScreenState createState() => _WalKThroughScreenState();
 }
 
 class _WalKThroughScreenState extends State<WalKThroughScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   List<PageViewModel> getPages() {
     return [
       PageViewModel(
@@ -99,6 +106,7 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
           ),
           done: AnimatedButton(
             onTabDone: () {
+              saveData();
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
@@ -144,5 +152,11 @@ class _WalKThroughScreenState extends State<WalKThroughScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> saveData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    bool isIntroScreenOpened = true;
+    sharedPreferences.setBool("isIntroScreenOpened", isIntroScreenOpened);
   }
 }

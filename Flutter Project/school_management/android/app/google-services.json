@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "593821210494",
+    "firebase_url": "https://go-smart-19307.firebaseio.com",
+    "project_id": "go-smart-19307",
+    "storage_bucket": "go-smart-19307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593821210494:android:33658d12fbbb251cce852f",
+        "android_client_info": {
+          "package_name": "com.example.school_management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593821210494-1frmq4guu94pj1ut49isp809vud7tf0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.school_management",
+            "certificate_hash": "57de021282b65a153b8e5250fb830673d13c6434"
+          }
+        },
+        {
+          "client_id": "593821210494-fug91ij99hgq2kukevic8t3efp56bn7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChLZpauNKAY8DbrrK4OjM6rdnHhlzDbFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593821210494-fug91ij99hgq2kukevic8t3efp56bn7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

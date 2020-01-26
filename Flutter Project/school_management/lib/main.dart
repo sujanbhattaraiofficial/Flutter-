@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'splashScreen.dart';
+import 'dart:async';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -8,6 +11,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  FirebaseUser firebaseUser;
   @override
   Widget build(BuildContext context) {
      SystemChrome.setPreferredOrientations([
@@ -23,4 +27,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+ 
 
