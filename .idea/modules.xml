@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/intermediates/aapt_friendly_merged_manifests/debug/aapt/aapt.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/intermediates/aapt_friendly_merged_manifests/debug/aapt/aapt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/input_text_style_design/build/app/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/Flutter Basic/input_text_style_design/build/app/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/generated/source/buildConfig/buildConfig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/learnflutter/build/app/generated/source/buildConfig/buildConfig2.iml" filepath="$PROJECT_DIR$/Flutter Basic/learnflutter/build/app/generated/source/buildConfig/buildConfig2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher_web/generated/source/buildConfig/buildConfig3.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher_web/generated/source/buildConfig/buildConfig3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/generated/source/buildConfig/buildConfig4.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/generated/source/buildConfig/buildConfig4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/message_pass/build/app/generated/source/buildConfig/buildConfig5.iml" filepath="$PROJECT_DIR$/Flutter Project/message_pass/build/app/generated/source/buildConfig/buildConfig5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher/generated/source/buildConfig/buildConfig6.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher/generated/source/buildConfig/buildConfig6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher_macos/generated/source/buildConfig/buildConfig7.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/build/url_launcher_macos/generated/source/buildConfig/buildConfig7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/build/app/generated/source/buildConfig/buildConfig8.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/build/app/generated/source/buildConfig/buildConfig8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/intermediates/library_manifest/debug/debug.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/share/intermediates/library_manifest/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/input_text_style_design/build/app/generated/not_namespaced_r_class_sources/debug/debug1.iml" filepath="$PROJECT_DIR$/Flutter Basic/input_text_style_design/build/app/generated/not_namespaced_r_class_sources/debug/debug1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/build/app/generated/not_namespaced_r_class_sources/debug/debug2.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/build/app/generated/not_namespaced_r_class_sources/debug/debug2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/learnflutter/build/app/generated/not_namespaced_r_class_sources/debug/debug3.iml" filepath="$PROJECT_DIR$/Flutter Basic/learnflutter/build/app/generated/not_namespaced_r_class_sources/debug/debug3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/generated/not_namespaced_r_class_sources/debug/debug4.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/build/app/generated/not_namespaced_r_class_sources/debug/debug4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/input_text_style_design/input_text_style_design.iml" filepath="$PROJECT_DIR$/Flutter Basic/input_text_style_design/input_text_style_design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/learnflutter/learnflutter.iml" filepath="$PROJECT_DIR$/Flutter Basic/learnflutter/learnflutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/learnflutter/android/app/src/main/main.iml" filepath="$PROJECT_DIR$/Flutter Basic/learnflutter/android/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/android/app/src/main/main1.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/android/app/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Basic/input_text_style_design/android/app/src/main/main2.iml" filepath="$PROJECT_DIR$/Flutter Basic/input_text_style_design/android/app/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/android/app/src/main/main3.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/android/app/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/message_pass/android/app/src/main/main4.iml" filepath="$PROJECT_DIR$/Flutter Project/message_pass/android/app/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/main5.iml" filepath="$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/message_pass/message_pass.iml" filepath="$PROJECT_DIR$/Flutter Project/message_pass/message_pass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/mydetail/mydetail.iml" filepath="$PROJECT_DIR$/Flutter Project/mydetail/mydetail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/android/app/src/profile/profile.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/android/app/src/profile/profile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/school_management/school_management.iml" filepath="$PROJECT_DIR$/Flutter Project/school_management/school_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flutter Project/shortcut_key/shortcut_key.iml" filepath="$PROJECT_DIR$/Flutter Project/shortcut_key/shortcut_key.iml" />
+    </modules>
+  </component>
+</project>

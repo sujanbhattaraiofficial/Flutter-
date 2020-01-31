@@ -1,24 +1,25 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_ui/flutter_firebase_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-import 'package:school_management/LoginScreens/loginBoard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'parentsLoginScreen.dart';
 
 class TeacherLoginScreen extends StatefulWidget {
-  FirebaseUser profileData;
-  FacebookLogin loginFacebook;
-  TeacherLoginScreen({this.profileData, this.loginFacebook});
+  final BaseAuth userAuth;
+  final FirebaseUser profileData;
+  TeacherLoginScreen({this.profileData, this.userAuth});
 
   @override
-  _TeacherLoginScreenState createState() => _TeacherLoginScreenState();
+  _TeacherLoginScreenState createState() => _TeacherLoginScreenState(this.userAuth);
 }
 
 class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
+  
   FirebaseAuth _auth = FirebaseAuth.instance;
   ProgressDialog progressDialog;
+  final BaseAuth userAuth;
+  _TeacherLoginScreenState(this.userAuth);
   @override
   Widget build(BuildContext context) {
     progressDialog = ProgressDialog(context, type: ProgressDialogType.Normal);
@@ -31,10 +32,8 @@ class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
           IconButton(
             onPressed: () {
               progressDialog.show();
-              Timer(Duration(seconds: 5), () {
-                signOut().whenComplete(() {
-                  print(widget.profileData.displayName);
-                });
+              Timer(Duration(seconds: 3), () {
+                signOut();
               });
             },
             icon: Icon(Icons.exit_to_app),
@@ -61,8 +60,9 @@ class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
   }
 
   Future<void> signOut() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.remove("name");
     await _auth.signOut();
-    await widget.loginFacebook.logOut();
-    await FirebaseAuth.instance.signOut();
+    await userAuth.signOut();
   }
 }

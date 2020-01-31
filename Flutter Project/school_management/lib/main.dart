@@ -14,18 +14,14 @@ class MyApp extends StatelessWidget {
   FirebaseUser firebaseUser;
   @override
   Widget build(BuildContext context) {
-     SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-      ]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       title: "e-School",
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
- 
-

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_ui/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:school_management/appThemeColors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,7 +8,9 @@ import 'teacherLoginScreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginBoard extends StatefulWidget {
-  PageController controller;
+  final UserAuth auth;
+
+  const LoginBoard({this.auth});
   @override
   _LoginBoardState createState() => _LoginBoardState();
 }
@@ -161,7 +162,9 @@ class _LoginBoardState extends State<LoginBoard> {
     print(name);
     if (name == user.displayName) {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return TeacherLoginScreen(profileData: user);
+        return TeacherLoginScreen(
+          userAuth: widget.auth,
+          profileData: user);
       }));
     }
     return currentToken;

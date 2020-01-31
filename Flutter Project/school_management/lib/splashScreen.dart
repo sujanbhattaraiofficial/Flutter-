@@ -5,7 +5,6 @@ import 'package:school_management/appThemeColors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './OnboardingScreen/walkThroughScreens.dart';
 import 'LoginScreens/loginBoard.dart';
-import 'LoginScreens/teacherLoginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

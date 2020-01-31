@@ -19,7 +19,7 @@ class MediaIcons extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
-                end: Alignment(1.0,3.0),
+                end: Alignment(1.0, 3.0),
                 colors: clrs,
                 tileMode: TileMode.clamp)),
         child: RawMaterialButton(
