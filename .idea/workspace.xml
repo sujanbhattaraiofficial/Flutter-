@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13851d52-7df2-46d7-b012-012a57d6b0ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Flutter Project/message_pass/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/message_pass/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/mydetail/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/mydetail/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/loginBoard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/loginBoard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/splashScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/splashScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/shortcut_key/lib/screens/aboutPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/shortcut_key/lib/screens/aboutPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/.gitignore" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +16,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="emulator-5554" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -40,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6970">
-              <caret line="411" column="52" selection-start-line="411" selection-start-column="52" selection-end-line="411" selection-end-column="52" />
+            <state relative-caret-position="6783">
+              <caret line="410" column="52" selection-start-line="410" selection-start-column="52" selection-end-line="410" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -49,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            <state relative-caret-position="133">
+              <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -91,8 +78,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -116,9 +101,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -199,15 +187,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6970">
-          <caret line="411" column="52" selection-start-line="411" selection-start-column="52" selection-end-line="411" selection-end-column="52" />
+        <state relative-caret-position="6783">
+          <caret line="410" column="52" selection-start-line="410" selection-start-column="52" selection-end-line="410" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        <state relative-caret-position="133">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
