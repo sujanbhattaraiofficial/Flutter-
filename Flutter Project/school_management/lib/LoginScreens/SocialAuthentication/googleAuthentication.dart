@@ -6,7 +6,6 @@ class GoogleOk {
   // GoogleOk() {
   //   //default constructor;
   //   handleSignIn();
-  // defiing method here
   
   // }
 
