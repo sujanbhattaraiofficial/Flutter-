@@ -1,24 +1,16 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_ui/flutter_firebase_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school_management/LoginScreens/SocialAuthentication/facebookAuthentication.dart';
 import 'package:school_management/LoginScreens/SocialAuthentication/googleAuthentication.dart';
-import 'package:school_management/LoginScreens/teacherLoginScreen.dart';
 import 'package:school_management/appThemeColors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'SocialMediaIcons/mediaIcons.dart';
 import 'SocialMediaIcons/customIcons.dart';
 
 class ParentsLoginScreen extends StatefulWidget {
-  final UserAuth auth;
-  final VoidCallback loggedInGoogle;
-  const ParentsLoginScreen({
-    Key key,
-    this.auth,
-    this.loggedInGoogle,
-  }) : super(key: key);
   @override
   _ParentsLoginScreenState createState() => _ParentsLoginScreenState();
 }
@@ -288,7 +280,9 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
                         ],
                         iconData: CustomIcons.facebook,
                         ifPressed: () {
-                          initiateFacebook();
+                          FacebookAuthenticationBase base =
+                              new FacebookAuthenticationBase();
+                          base.initiateFacebook();
                         },
                       ),
                     ],
@@ -364,50 +358,6 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
     );
   }
 
-  void initiateFacebook() async {
-    final facebookLogin = new FacebookLogin();
-    FacebookLoginResult facebookLoginResult =
-        await facebookLogin.logIn(['email', 'public_profile']);
-    print(facebookLoginResult.status);
-    switch (facebookLoginResult.status) {
-      case FacebookLoginStatus.loggedIn:
-        facebookLoginSucessfully(facebookLoginResult);
-        saveCurrentUserInfo();
-        // final token = facebookLoginResult.accessToken.token;
-        // final graphResponse = await http.get(
-        //     'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email,picture&access_token=$token');
-        // var profile = json.decode(graphResponse.body);
-        // await Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //   return TeacherLoginScreen(profileData: graphResponse);
-        // }));
-        // print(profile);
-
-        break;
-      case FacebookLoginStatus.cancelledByUser:
-        // TODO: Handle this case.
-        break;
-      case FacebookLoginStatus.error:
-        // TODO: Handle this case.
-        break;
-    }
-  }
-
-  Future<String> facebookLoginSucessfully(
-      FacebookLoginResult loginResult) async {
-    {
-      FacebookAccessToken facebookToken = loginResult.accessToken;
-      AuthCredential credential =
-          FacebookAuthProvider.getCredential(accessToken: facebookToken.token);
-      firebaseUser = (await _auth.signInWithCredential(credential)).user;
-      Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return TeacherLoginScreen(
-          profileData: firebaseUser,
-        );
-      }));
-      return null;
-    }
-  }
-
   Future<FirebaseUser> saveCurrentUserInfo() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     final user = await _auth.currentUser();
@@ -416,24 +366,5 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
     sharedPreferences.setString("name", userName);
     sharedPreferences.setString("facebook", token.toString());
     return user;
-  }
-}
-
-abstract class BaseAuth {
-  Future<void> signOut();
-}
-
-class UserAuth implements BaseAuth {
-  FirebaseAuth _auth = FirebaseAuth.instance;
-  FirebaseUser firebaseUser;
-
-  Future<void> signOut() async {
-    await googleSignIn.signOut();
-    await facebookLogin.logOut();
-    await FirebaseAuth.instance.signOut();
-    await _auth.signOut();
-    firebaseUser = await _auth.currentUser();
-    firebaseUser = null;
-    print(firebaseUser.displayName);
   }
 }

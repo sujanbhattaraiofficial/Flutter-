@@ -2,24 +2,37 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'parentsLoginScreen.dart';
+import 'package:school_management/LoginScreens/SocialAuthentication/currentUserInfo.dart';
+import 'package:school_management/LoginScreens/SocialAuthentication/facebookAuthentication.dart';
 
 class TeacherLoginScreen extends StatefulWidget {
-  final BaseAuth userAuth;
-  final FirebaseUser profileData;
-  TeacherLoginScreen({this.profileData, this.userAuth});
-
   @override
-  _TeacherLoginScreenState createState() => _TeacherLoginScreenState(this.userAuth);
+  _TeacherLoginScreenState createState() => _TeacherLoginScreenState();
 }
 
 class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
-  
+  String image1, name1;
   FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseUser user;
   ProgressDialog progressDialog;
-  final BaseAuth userAuth;
-  _TeacherLoginScreenState(this.userAuth);
+  CurrentUserInfo info = new CurrentUserInfo();
+  String name = "", image = "";
+
+  @override
+  void initState() {
+    super.initState();
+    ok().then((value) {
+      setState(() {
+        name = value.displayName;
+        image = value.photoUrl;
+      });
+    });
+  }
+
+  Future<FirebaseUser> ok() async {
+    return await CurrentUserInfo.fetchUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     progressDialog = ProgressDialog(context, type: ProgressDialogType.Normal);
@@ -33,7 +46,9 @@ class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
             onPressed: () {
               progressDialog.show();
               Timer(Duration(seconds: 3), () {
-                signOut();
+                FacebookAuthenticationBase facebookAuthenticationBase =
+                    new FacebookAuthenticationBase();
+                facebookAuthenticationBase.logOutFacebook();
               });
             },
             icon: Icon(Icons.exit_to_app),
@@ -45,24 +60,17 @@ class _TeacherLoginScreenState extends State<TeacherLoginScreen> {
           child: Row(
             children: <Widget>[
               CircleAvatar(
-                backgroundImage: NetworkImage(widget.profileData.photoUrl),
+                backgroundImage: NetworkImage(image),
                 backgroundColor: Colors.transparent,
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(10.0, 0, 0, 0),
-                child: Text("welcome" + " " + widget.profileData.displayName),
+                child: Text(name),
               )
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<void> signOut() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    sharedPreferences.remove("name");
-    await _auth.signOut();
-    await userAuth.signOut();
   }
 }

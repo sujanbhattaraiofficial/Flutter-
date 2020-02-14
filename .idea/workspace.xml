@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13851d52-7df2-46d7-b012-012a57d6b0ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter Project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase Demo/firebase_connection/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase Demo/firebase_connection/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/SocialAuthentication/googleAuthentication.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/SocialAuthentication/googleAuthentication.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/loginBoard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/loginBoard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter Project/school_management/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6783">
-              <caret line="410" column="52" selection-start-line="410" selection-start-column="52" selection-end-line="410" selection-end-column="52" />
+            <state relative-caret-position="6120">
+              <caret line="370" selection-start-line="370" selection-end-line="370" />
             </state>
           </provider>
         </entry>
@@ -37,10 +45,7 @@
         <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -78,7 +83,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,6 +107,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,18 +192,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/parentsLoginScreen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6783">
-          <caret line="410" column="52" selection-start-line="410" selection-start-column="52" selection-end-line="410" selection-end-column="52" />
+        <state relative-caret-position="6120">
+          <caret line="370" selection-start-line="370" selection-end-line="370" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Flutter Project/school_management/lib/LoginScreens/teacherLoginScreen.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

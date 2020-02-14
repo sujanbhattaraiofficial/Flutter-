@@ -1,15 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_ui/flutter_firebase_ui.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:school_management/Services/navigationServices.dart';
+import 'package:school_management/locator.dart';
 
 class GoogleOk {
-  // GoogleOk() {
-  //   //default constructor;
-  //   handleSignIn();
-  //
-
-  // }
-
+  GoogleSignIn googleSignIn = new GoogleSignIn();
+  final NavigationServices _navigationServices = sl<NavigationServices>();
   Future<void> handleSignIn() async {
     final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     GoogleSignInAccount googleAccount = await googleSignIn.signIn();
@@ -21,11 +17,19 @@ class GoogleOk {
     AuthResult authResult =
         (await firebaseAuth.signInWithCredential(credential));
     FirebaseUser user = authResult.user;
-
     assert(!user.isAnonymous);
     assert(await user.getIdToken() != null);
 
     final FirebaseUser currentUser = await firebaseAuth.currentUser();
     assert(user.uid == currentUser.uid);
+    _navigationServices.navigateTo('/teacher');
+  }
+
+  Future<void> logOutGoogle() async {
+    await FirebaseAuth.instance.signOut().then((value) {
+      googleSignIn.signOut();
+
+      _navigationServices.navigateTo('/loginBoard');
+    });
   }
 }

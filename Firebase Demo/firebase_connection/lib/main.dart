@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 final DatabaseReference databaseReference = FirebaseDatabase.instance.reference().child("pathDemo");
 
+
 sendData()
 {
   databaseReference.push().set({
