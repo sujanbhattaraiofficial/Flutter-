@@ -178,7 +178,7 @@ class _ParentsLoginScreenState extends State<ParentsLoginScreen> {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: "niuno",
-                                  fontSize: 15.0),
+                                  fontSize: 15.0), //
                             ),
                           ),
                         ],
